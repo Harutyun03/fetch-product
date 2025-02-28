@@ -1,0 +1,28 @@
+img{
+    max-width: 200px;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    background-color: white;
+    position: sticky;
+    top: 0;
+}
+
+.nav > a > svg{
+    color: black;
+    font-size: 22px;
+}
+
+.parent{
+    display: flex;
+    column-gap: 100px;
+    >li{
+        font-size: 21px;
+        color: black;
+        cursor: pointer;
+    }
+}
