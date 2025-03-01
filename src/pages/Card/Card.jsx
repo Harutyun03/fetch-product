@@ -1,28 +1,29 @@
 import './Card.css'
 import { useNavigate } from 'react-router-dom'
+import Cardpages from '../../components/Cardpages/Cardpages'
 
 
-function Cards({card}){
+function Cards({card,change,removeItem, ClaerPage}){
 
     const navigate = useNavigate()
     const goback = () => {
         navigate(-1)
     }
+
+    const clear = () => {
+        ClaerPage()
+      }
     return(
-        <div>
+        <div className='tops'>
             {
                 card.map((e) => {
-                    return(
-                    <div className="item-card">
-                        <li>{e.title}</li>
-                        <img src={e.image} className='image'/>
-                        <p>{e.price}</p>
-                        <button onClick={goback} className='btn'>Go back</button>
-                    </div>
-                    )  
-                    
+                    return <Cardpages key={e.id} elem={e} change={change} removeItem={removeItem}/>
                 })
             }
+            <div className='btngroups'>
+                <button className='btn' onClick={clear}>Clear</button>
+                <button onClick={goback} className='btns'>Go Back</button>
+            </div>
         </div>
     )
 }

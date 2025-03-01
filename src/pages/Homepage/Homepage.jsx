@@ -3,7 +3,7 @@ import './Homepage.css'
 
 function Homepage({product, addCard}){
     return(
-        <div>
+        <div className="boxses">
             <div className="box">
                 {
                     product.map((item) => {

@@ -2,10 +2,10 @@ import { Outlet } from "react-router-dom"
 import Nav from "../Nav/Nav"
 
 
-function Layout(){
+function Layout({card}){
     return(
-        <div>
-            <Nav/>
+        <div className="layout">
+            <Nav card={card}/>
             <Outlet/>
 
         </div>

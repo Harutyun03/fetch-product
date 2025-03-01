@@ -1,4 +1,4 @@
-img{
+.image{
     max-width: 200px;
 }
 
@@ -10,12 +10,18 @@ img{
     background-color: white;
     position: sticky;
     top: 0;
+    z-index: 999;
 }
 
 .nav > a > svg{
     color: black;
     font-size: 22px;
+    :hover{
+        color: grey;
+    }
 }
+
+
 
 .parent{
     display: flex;
@@ -25,4 +31,8 @@ img{
         color: black;
         cursor: pointer;
     }
+}
+
+.sub{
+    font-size: 15px;
 }
