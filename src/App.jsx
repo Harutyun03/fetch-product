@@ -81,7 +81,7 @@ function App() {
       
   }
 
-  const ClaerPage = () => {
+  const Claer = () => {
     setCard([])
   }
 
@@ -90,7 +90,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout card={card}/>}>
           <Route index  element={<Homepage  product={product} addCard={addCard}/>}/>
-          <Route path='/card' element={<Cards card={card} change={change} removeItem={removeItem} ClaerPage = {ClaerPage}/>}/>
+          <Route path='/card' element={<Cards card={card} change={change} removeItem={removeItem} Claer = {Claer}/>}/>
         </Route>
       </Routes>
     </div>

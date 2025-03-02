@@ -3,15 +3,15 @@ import { useNavigate } from 'react-router-dom'
 import Cardpages from '../../components/Cardpages/Cardpages'
 
 
-function Cards({card,change,removeItem, ClaerPage}){
+function Cards({card,change,removeItem, Claer}){
 
     const navigate = useNavigate()
     const goback = () => {
         navigate(-1)
     }
 
-    const clear = () => {
-        ClaerPage()
+    const clearPage = () => {
+        Claer()
       }
     return(
         <div className='tops'>
@@ -21,7 +21,7 @@ function Cards({card,change,removeItem, ClaerPage}){
                 })
             }
             <div className='btngroups'>
-                <button className='btn' onClick={clear}>Clear</button>
+                <button className='btn' onClick={clearPage}>Clear</button>
                 <button onClick={goback} className='btns'>Go Back</button>
             </div>
         </div>
