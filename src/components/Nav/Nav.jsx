@@ -18,6 +18,12 @@ function Nav({card}){
                  <FaCartPlus/>
                  <sub className='sub'>{card.length}</sub>
             </NavLink>
+            <NavLink to='/register'>
+               <button className='btn-nav'>Create account</button>
+            </NavLink>
+            <NavLink to='/login'>
+                <button>Login</button>
+            </NavLink>
             
         </div>
         

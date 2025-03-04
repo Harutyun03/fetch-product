@@ -17,7 +17,7 @@ function Cards({card,change,removeItem, Claer}){
         <div className='tops'>
             {
                 card.map((e) => {
-                    return <Cardpages key={e.id} elem={e} change={change} removeItem={removeItem}/>
+                    return <Cardpages key={e.id}  elem={e} change={change} removeItem={removeItem}/>
                 })
             }
             <div className='btngroups'>

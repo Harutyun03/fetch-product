@@ -1,0 +1,26 @@
+.register-box{
+    border: 2px solid white;
+    text-align: center;
+    width: 500px;
+    height: 350px;
+    background-color: white;
+    border-radius: 25px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+input{
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 14px;
+    margin: 7px 0;
+}
+
+.register-h1{
+    color: black;
+    margin-top: 15px;
+}
+
+form{
+    margin-top: 20px;
+}

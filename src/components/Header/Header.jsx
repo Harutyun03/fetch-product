@@ -1,17 +1,18 @@
 import './Header.css'
+import { NavLink } from 'react-router-dom'
+import Button from '../Button/Button'
 
 
 function Header({item, addCard}){
 
-    const handleCard = (item) => {
-            addCard(item)
-    }
     return(
         <div className="list">
             <p>{item.title}</p>
-            <img src={item.image} />
+            <NavLink to={`/${item.id}`}>
+                <img src={item.image} />
+            </NavLink>
             <p>{item.price}$</p>
-            <button className='btn' onClick={() => handleCard(item)}>Buy</button>
+            <Button item={item} addCard={addCard}/>
         </div>
     )
 }

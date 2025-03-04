@@ -36,3 +36,16 @@
 .sub{
     font-size: 15px;
 }
+
+.btn-nav{
+    
+        padding: 13px 35px;
+        border-radius: 20px;
+        font-size: 16px;
+        background-color: #f3b01b;
+        border: 0px ;
+        color: white;
+        cursor: pointer;
+       
+    
+}

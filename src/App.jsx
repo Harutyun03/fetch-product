@@ -4,24 +4,36 @@ import { Route,Routes } from 'react-router-dom'
 import Layout from './components/Layout/Layout'
 import Homepage from './pages/Homepage/Homepage'
 import Cards from './pages/Card/Card'
+import Productinfo from './pages/Productinfo/Productinfo'
+import axios from 'axios'
+import Register from './pages/Register/Register'
+import Login from './pages/Login/Login'
+import Profile from './pages/Profile/Profile'
+
+
+export const instance = axios.create({
+  baseURL : "https://fakestoreapi.com"
+})
+
 
 function App() {
   
   const [product,setProduct] = useState([])
   const [card,setCard] = useState([])
+  const [users, setUsers] = useState([])
+  const [user, setUser] = useState(null)
   
   
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
-    .then((res) => res.json())
-    .then((res) => setProduct(res.map((prods) => {
+
+    instance.get('/products')
+    .then((res) => setProduct(res.data.map((prods) => {
       return {
         ... prods ,
         count : 1,
         cardprice : prods.price
       }
     })  
-
     ))
   },[])
 
@@ -85,12 +97,31 @@ function App() {
     setCard([])
   }
 
+
+
+
+  const registerUser = (userData) => {
+		const User = { ...userData,
+       LogginId: false }
+		setUsers(prods => [...prods, User])
+	}
+
+  const loginUser = (userData) => {
+		const Userner = users.find(
+			u => u.username === userData.username && u.password === userData.password
+		)
+	}
+
   return (
     <div className='app'>
       <Routes>
         <Route path='/' element={<Layout card={card}/>}>
           <Route index  element={<Homepage  product={product} addCard={addCard}/>}/>
           <Route path='/card' element={<Cards card={card} change={change} removeItem={removeItem} Claer = {Claer}/>}/>
+          <Route path='/:id' element={<Productinfo product={product} addCard={addCard}/>}/>
+          <Route path='/register' element={<Register registerUser={registerUser}/>}/>
+          <Route path='/login' element={<Login loginUser={loginUser}/>}/>
+          <Route path='/profile' element={<Profile users={users}/>}/>
         </Route>
       </Routes>
     </div>
