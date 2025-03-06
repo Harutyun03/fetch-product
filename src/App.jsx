@@ -25,6 +25,10 @@ function App() {
   
   
   useEffect(() => {
+    const cachedCard = JSON.parse(localStorage.getItem('card'));
+    if(cachedCard) {
+      setCard(cachedCard);
+    }
 
     instance.get('/products')
     .then((res) => setProduct(res.data.map((prods) => {
@@ -36,6 +40,10 @@ function App() {
     })  
     ))
   },[])
+
+  useEffect(() => {
+    localStorage.setItem("card", JSON.stringify(card));
+  },[card]);
 
 
   

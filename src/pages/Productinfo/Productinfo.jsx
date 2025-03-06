@@ -30,7 +30,7 @@ function Productinfo({item,addCard}){
         <p>Price-{info?.price}$</p>
         <span>{info?.description}</span>
         <button className='btns-info' onClick={gobacks}>GoBack</button>
-        <Button item={item} addCard={addCard}/>
+        <Button item={info} addCard={addCard}/>
     </div>
   )
 }
